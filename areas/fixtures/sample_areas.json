@@ -1,0 +1,34 @@
+[
+    {
+        "model": "area_nest.area",
+        "pk": 1,
+        "fields": {
+            "name": "Home",
+            "parent_area": null
+        }
+    },
+    {
+        "model": "area_nest.area",
+        "pk": 2,
+        "fields": {
+            "name": "Upstairs Bathroom",
+            "parent_area": 1
+        }
+    },
+    {
+        "model": "area_nest.area",
+        "pk": 3,
+        "fields": {
+            "name": "Bathtube",
+            "parent_area": 2
+        }
+    },
+    {
+        "model": "area_nest.area",
+        "pk": 4,
+        "fields": {
+            "name": "Yard",
+            "parent_area": 1
+        }
+    }
+]
