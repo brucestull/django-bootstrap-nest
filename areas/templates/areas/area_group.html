@@ -1,23 +1,23 @@
 {% comment %} areas\templates\areas\area_group.html {% endcomment %}
 {% for area in areas %}
-    <div class="accordion mb-2" id="accordion-{{ area.id }}">
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapse-{{ area.id }}">
-                    {{ area.name }} ({{ area.subareas.count }})
-                </button>
-            </h2>
-            <div id="collapse-{{ area.id }}" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                    {% if area.subareas.exists %}
-                        {% include "area_nest/area_group.html" with areas=area.subareas.all %}
-                    {% else %}
-                        <p class="text-muted">No sub-areas in this location.</p>
-                    {% endif %}
-                    <a href="{% url 'area_nest:area_edit' area.pk %}" class="btn btn-outline-secondary btn-sm mt-2">Edit</a>
-                </div>
+<div class="accordion mb-2" id="accordion-{{ area.id }}">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapse-{{ area.id }}">
+                {{ area.name }} ({{ area.subareas.count }})
+            </button>
+        </h2>
+        <div id="collapse-{{ area.id }}" class="accordion-collapse collapse">
+            <div class="accordion-body">
+                {% if area.subareas.exists %}
+                {% include "areas/area_group.html" with areas=area.subareas.all %}
+                {% else %}
+                <p class="text-muted">No sub-areas in this location.</p>
+                {% endif %}
+                <a href="{% url 'area_nest:area_edit' area.pk %}" class="btn btn-outline-secondary btn-sm mt-2">Edit</a>
             </div>
         </div>
     </div>
+</div>
 {% endfor %}

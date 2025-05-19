@@ -17,6 +17,8 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import include, path
+# import template rendering
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path("admin/doc/", include("django.contrib.admindocs.urls")),

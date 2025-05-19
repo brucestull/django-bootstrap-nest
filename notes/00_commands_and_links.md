@@ -6,3 +6,7 @@
 `
 
 ## Links
+
+- [http://localhost:8000/areas/](http://localhost:8000/areas/)
+- [http://localhost:8000/areas/create/](http://localhost:8000/areas/create/)
+- [http://localhost:8000/templates/](http://localhost:8000/templates/)
