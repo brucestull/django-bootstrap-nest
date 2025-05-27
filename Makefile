@@ -4,6 +4,9 @@
 clean:
 	find . -type d -name "__pycache__" -exec rm -r {} +
 	find . -type f -name "*.pyc" -delete
+	find . -type d -name ".pytest_cache" -exec rm -r {} +
+	find . -type d -name "htmlcov" -exec rm -r {} +
+	find . -type f -name ".coverage" -exec rm -r {} +
 	echo "Cleaned __pycache__ and .pyc files."
 
 # Run pytest only
