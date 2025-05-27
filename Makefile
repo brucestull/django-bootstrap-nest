@@ -1,4 +1,4 @@
-.PHONY: clean test coverage covhtml migrate makemigrations makemigrate runserver createsu shell loaddata resetdb
+.PHONY: clean test coverage covhtml migrate makemigrations makemigrate runserver createsu shell loaddata resetdb seed
 
 # Clean pyc and __pycache__
 clean:
@@ -12,22 +12,22 @@ test:
 
 # Run pytest with coverage
 coverage:
-	pytest --ds=config.settings --cov=plan_it --cov-report=term-missing --cov-report=html
+	pytest --ds=config.settings --cov=areas --cov-report=term-missing --cov-report=html
 
 # Open the HTML coverage report (Linux/Mac)
 covhtml:
 	xdg-open htmlcov/index.html || open htmlcov/index.html || echo "Please open htmlcov/index.html manually."
 
-# Run makemigrations
-makemigrations:
-	python manage.py makemigrations
-
 # Run migrate
 migrate:
 	python manage.py migrate
 
+# Run makemigrations
+makemigrations:
+	python manage.py makemigrations
+
 # Run makemigrations and migrate
-makemigrate: makemigrations migrate
+makemigrate: migrate makemigrations
 
 # Run the development server
 runserver:

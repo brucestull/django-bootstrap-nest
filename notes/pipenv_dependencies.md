@@ -10,11 +10,13 @@ name = "pypi"
 
 [packages]
 django = "*"
-python-dotenv = "*"
 docutils = "*"
 pytest = "*"
 flake8 = "*"
 isort = "*"
+python-dotenv = "*"
+pytest-cov = "*"
+pytest-django = "*"
 
 [dev-packages]
 

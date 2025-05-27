@@ -6,10 +6,12 @@ name = "pypi"
 [packages]
 django = "*"
 docutils = "*"
+python-dotenv = "*"
 pytest = "*"
+pytest-django = "*"
+pytest-cov = "*"
 flake8 = "*"
 isort = "*"
-python-dotenv = "*"
 
 [dev-packages]
 
